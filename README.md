@@ -1,6 +1,6 @@
 # Flask Stack Simulator startup template
 
-This is the unfinished repository for a pre-demo reading activity. Read `reading/Flask_PreDemo_Reading_Activity.pdf` first. 
+This is the unfinished repository for a pre-demo reading activity. Read `Flask_PreDemo_Reading_Activity.pdf` first. 
 
 ## Before the demonstration
 
