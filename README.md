@@ -14,7 +14,7 @@ This is the unfinished repository for a pre-demo reading activity. Read `Flask_P
 ## Files
 
 - app.py: Flask setup and route TODOs P1-P9.
-- stack_model.py: Stack method TODOs M1-M6.
+- stack_model.py: Stack method.
 - templates/index.html: standalone static simulator preview.
 - templates/contact.html: standalone placeholder page.
 - templates/base.html: standalone layout reference; inheritance is not active yet.
