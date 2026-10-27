@@ -1,27 +1,30 @@
-# Flask Stack Simulator startup template
+@"
+# Flask Stack Simulator
 
-This is the unfinished repository for a pre-demo reading activity. Read `Flask_PreDemo_Reading_Activity.pdf` first. 
+## Student Information
+* **Name:** Edrian C. Baladad
+* **Course & Section:** BSIT / ELEC 4 - Python Programming
+* **Student ID:** 23-BGU-0293
+* **Instructor:** Mr. Jackson S. Soriano, MIT
 
-## Before the demonstration
+---
 
-1. Clone the repository URL supplied by your instructor.
-2. Open the cloned folder in VS Code.
-3. Open `templates/index.html` directly in a browser. This is a static preview.
-4. Click through the navigation to the contact placeholder.
-5. Read the HTML comments, app.py TODOs, and stack_model.py TODOs.
-6. Answer the reading worksheet. Do not complete the TODOs before the demonstration.
+## Activity Description
+Starter repository for the **Flask Stack Simulator** pre-demonstration activity. This project demonstrates how Python backend logic (LIFO Stack data structure) connects to a web frontend built with Flask, Jinja, HTML, CSS, Bootstrap, JavaScript, and jQuery.
 
-## Files
+* **Original Starter Repository:** [Jackson-Soriano/f1-elec4-stack-simulator-starter](https://github.com/Jackson-Soriano/f1-elec4-stack-simulator-starter.git)
 
-- app.py: Flask setup and route TODOs P1-P9.
-- stack_model.py: Stack method.
-- templates/index.html: standalone static simulator preview.
-- templates/contact.html: standalone placeholder page.
-- templates/base.html: standalone layout reference; inheritance is not active yet.
-- static/css/style.css: supplied appearance adapted for this preview.
-- static/js/ui.js: optional focus enhancement and a later effect TODO.
-- requirements.txt: Flask dependency only.
+---
 
-During the demo, the instructor will convert static paths into url_for calls, connect form submission, introduce Jinja variables and loops, and connect Python stack operations. The three HTML files are intentionally independent before that conversion.
+## Starter File Overview
+* `app.py`: Flask routing (`/` and `/stack`) and request processing[cite: 5, 6].
+* `stack_model.py`: Python `Stack` class implementing LIFO operations (`push`, `pop`, `peek`, `size`, `clear`)[cite: 5].
+* `templates/`: HTML templates (`base.html`, `index.html`, `contact.html`)[cite: 5].
+* `static/`: Custom CSS styling (`style.css`) and client-side scripts (`ui.js`)[cite: 5].
 
+---
 
+## Local Setup Instructions
+1. Clone this repository:
+   ```bash
+   git clone [https://github.com/Ed31an/F1-stack-simulator-Baladad-Edrian.git](https://github.com/Ed31an/F1-stack-simulator-Baladad-Edrian.git)
