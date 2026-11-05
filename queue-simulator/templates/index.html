@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}Flask Queue Simulator (FIFO){% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        <div class="card p-4 mb-4 shadow-sm">
+            <h2>Queue Controls</h2>
+            <form action="{{ url_for('operate') }}" method="POST">
+                <div class="mb-3">
+                    <label for="st_data" class="form-label">Data Value:</label>
+                    <input type="text" id="st_data" name="value" class="form-control" maxlength="24" placeholder="Enter value...">
+                </div>
+                <div class="btn-group w-100" role="group">
+                    <button type="submit" name="action" value="enqueue" class="btn btn-success">Enqueue (Rear)</button>
+                    <button type="submit" name="action" value="dequeue" class="btn btn-danger">Dequeue (Front)</button>
+                    <button type="submit" name="action" value="peek" class="btn btn-info text-white">Peek (Front)</button>
+                    <button type="submit" name="action" value="clear" class="btn btn-secondary">Clear</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-4 mb-4 shadow-sm" id="stock">
+            <h3>Queue Data (Count: {{ size }})</h3>
+            <div class="stack-container border p-3 min-vh-25 rounded bg-light">
+                {% for item in items %}
+                   <div class="p-2 mb-2 border rounded text-center shadow-sm {% if loop.first and highlight %}pick bg-warning text-dark fw-bold{% else %}bg-white{% endif %}">
+                        {{ item }}
+                        {% if loop.first %}
+                            <span class="badge bg-success ms-1">FRONT</span>
+                        {% endif %}
+                        {% if loop.last and not loop.first %}
+                            <span class="badge bg-secondary ms-1">REAR</span>
+                        {% endif %}
+                        {% if loop.first and loop.last %}
+                            <span class="badge bg-secondary ms-1">REAR</span>
+                        {% endif %}
+                    </div>
+                {% else %}
+                    <p class="text-muted text-center my-3">Queue is empty.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-4 mb-4 shadow-sm">
+            <h3>Dequeued Items</h3>
+            <div class="border p-3 min-vh-25 rounded bg-light">
+                {% for item in dequeued %}
+                    <div class="p-2 mb-2 bg-white border rounded text-center text-danger fw-bold">{{ item }}</div>
+                {% else %}
+                    <p class="text-muted text-center my-3">No dequeued items.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
